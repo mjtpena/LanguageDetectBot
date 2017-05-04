@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LanguangeDetectApp"
+             x:Class="LanguangeDetectApp.MainPage">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="MessagesListView" Grid.Row="0" BackgroundColor="Silver" ItemsSource="{Binding ConversationList, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Text}" TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator IsRunning="{Binding ProgressVisible}" IsVisible="{Binding ProgressVisible}" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            <Entry Grid.Row="2" x:Name="Message"/>
+            <Button Grid.Row="3" Text="Detect Language" BackgroundColor="Blue" Clicked="SendButtonClicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
