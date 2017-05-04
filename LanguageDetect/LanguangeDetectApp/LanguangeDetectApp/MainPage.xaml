@@ -5,7 +5,7 @@
              x:Class="LanguangeDetectApp.MainPage">
 
     <ContentPage.Content>
-        <Grid>
+        <Grid Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="4*" />
                 <RowDefinition Height="1*" />
